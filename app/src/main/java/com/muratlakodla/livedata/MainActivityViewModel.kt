@@ -16,7 +16,7 @@ class MainActivityViewModel : ViewModel() {
     private var _textContent = MutableLiveData<String>()
 
     /**
-     * Üste oluşturduğumuz değiştieilebilir değişkeni sadece canlı veri tipine çeviriyoruz.
+     * Üste oluşturduğumuz değiştirilebilir değişkeni sadece canlı veri tipine çeviriyoruz.
      * Böylece observable yani gözlemlenebilir hale getiriyoruz.
      */
     val textContent: LiveData<String> get() = _textContent
