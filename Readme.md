@@ -1,7 +1,7 @@
-**Android Kotlin ViewModel ve Livedata
+#Android Kotlin ViewModel ve Livedata
 
 ![Livedata](https://yuklio.com/f/n1sdc-livedata.png)
-<small>Görsel Kaybak: https://www.youtube.com/watch?v=suC0OM5gGAA</small>   
+_Görsel Kaynak: https://www.youtube.com/watch?v=suC0OM5gGAA_  
 
 
 Temiz kod mantığı ve bu mantık doğrultusunda geliştirilmiş mimari desenler bir çok yazılım diline
@@ -18,3 +18,17 @@ ViewModel'lar ile View'ler arasında anlık veri alış-verişi olması gereken 
 çalışan, gözlemlenebilir, değişiklik olduğu zaman bizi haberdar eden bir yapıya ihtiyaç duyarız.
 
 İşte LiveData tam olarak bunun için kullanılmaktadır.
+
+
+MainActivity
+```kotlin
+    viewModel.textContent.observe(this, {
+        binding.txtMain.text = it
+    })
+```
+
+MainActivityViewModel
+```kotlin
+    private var _textContent = MutableLiveData<String>()
+    val textContent: LiveData<String> get() = _textContent
+```
